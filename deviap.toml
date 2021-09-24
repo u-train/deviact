@@ -1,0 +1,2606 @@
+[selene]
+name="deviap"
+
+[colour]
+property = true
+
+[[unpack.args]]
+type = "..."
+required = false
+
+[[select.args]]
+type = "..."
+required = false
+
+[[tonumber.args]]
+type = "..."
+required = false
+
+[[tostring.args]]
+type = "..."
+required = false
+
+[[error.args]]
+type = "..."
+required = false
+
+[[pcall.args]]
+type = "..."
+required = false
+
+[[xpcall.args]]
+type = "..."
+required = false
+
+[[core.disconnect.args]]
+type = "..."
+required = false
+
+[core.scene]
+struct = "scene"
+
+[core.networking]
+struct = "networking"
+
+[core.graphics]
+struct = "graphics"
+
+[core.json]
+struct = "json"
+
+[core.debug]
+struct = "debug"
+
+[core.workshop]
+struct = "workshop"
+
+[core.input]
+struct = "input"
+
+[core.reflection]
+struct = "reflection"
+
+[core.dev]
+struct = "dev"
+
+[core.haptic]
+struct = "haptic"
+
+[core.interface]
+struct = "guiFrame"
+
+[core.http]
+struct = "http"
+
+[core.base64]
+struct = "base64"
+
+[core.datastore]
+struct = "datastore"
+
+[core.io]
+struct = "io"
+
+[core.tween]
+struct = "tween"
+
+[core.process]
+struct = "process"
+
+[[core.load.args]]
+type = "..."
+required = false
+
+[core.settings]
+struct = "settings"
+
+[core.guiHelper]
+struct = "guiHelper"
+
+[[core.construct.args]]
+type = "..."
+required = false
+
+[[spawn.args]]
+type = "..."
+required = false
+
+[enums.membershipType.pro]
+property = true
+
+[enums.membershipType.none]
+property = true
+
+[enums.membershipType.plus]
+property = true
+
+[enums.lightType.directional]
+property = true
+
+[enums.lightType.point]
+property = true
+
+[enums.lightType.spot]
+property = true
+
+[enums.lightType.area]
+property = true
+
+[enums.lineCap.round]
+property = true
+
+[enums.lineCap.square]
+property = true
+
+[enums.lineCap.but]
+property = true
+
+[enums.align.middle]
+property = true
+
+[enums.align.middleRight]
+property = true
+
+[enums.align.bottomLeft]
+property = true
+
+[enums.align.bottomMiddle]
+property = true
+
+[enums.align.bottomRight]
+property = true
+
+[enums.align.topLeft]
+property = true
+
+[enums.align.topMiddle]
+property = true
+
+[enums.align.topRight]
+property = true
+
+[enums.align.middleLeft]
+property = true
+
+[enums.fogType.exponential]
+property = true
+
+[enums.fogType.disabled]
+property = true
+
+[enums.fogType.linear]
+property = true
+
+[enums.iconType.faBrand]
+property = true
+
+[enums.iconType.faRegular]
+property = true
+
+[enums.iconType.faSolid]
+property = true
+
+[enums.iconType.material]
+property = true
+
+[enums.iconType.materialOutline]
+property = true
+
+[enums.iconType.materialRound]
+property = true
+
+[enums.iconType.materialSharp]
+property = true
+
+[enums.iconType.materialTwoTone]
+property = true
+
+[enums.keys.KEY_T]
+property = true
+
+[enums.keys.KEY_U]
+property = true
+
+[enums.keys.KEY_V]
+property = true
+
+[enums.keys.KEY_DOWN]
+property = true
+
+[enums.keys.KEY_UP]
+property = true
+
+[enums.keys.KEY_NUMLOCKCLEAR]
+property = true
+
+[enums.keys.KEY_KP_DIVIDE]
+property = true
+
+[enums.keys.KEY_1]
+property = true
+
+[enums.keys.KEY_2]
+property = true
+
+[enums.keys.KEY_KP_PLUS]
+property = true
+
+[enums.keys.KEY_KP_ENTER]
+property = true
+
+[enums.keys.KEY_5]
+property = true
+
+[enums.keys.KEY_6]
+property = true
+
+[enums.keys.KEY_7]
+property = true
+
+[enums.keys.KEY_8]
+property = true
+
+[enums.keys.KEY_KP_5]
+property = true
+
+[enums.keys.KEY_KP_6]
+property = true
+
+[enums.keys.KEY_KP_7]
+property = true
+
+[enums.keys.KEY_KP_8]
+property = true
+
+[enums.keys.KEY_KP_9]
+property = true
+
+[enums.keys.KEY_KP_0]
+property = true
+
+[enums.keys.KEY_KP_PERIOD]
+property = true
+
+[enums.keys.KEY_NONUSBACKSLASH]
+property = true
+
+[enums.keys.KEY_APPLICATION]
+property = true
+
+[enums.keys.KEY_POWER]
+property = true
+
+[enums.keys.KEY_RIGHTBRACKET]
+property = true
+
+[enums.keys.KEY_BACKSLASH]
+property = true
+
+[enums.keys.KEY_NONUSHASH]
+property = true
+
+[enums.keys.KEY_SEMICOLON]
+property = true
+
+[enums.keys.KEY_APOSTROPHE]
+property = true
+
+[enums.keys.KEY_GRAVE]
+property = true
+
+[enums.keys.KEY_COMMA]
+property = true
+
+[enums.keys.KEY_PERIOD]
+property = true
+
+[enums.keys.KEY_SLASH]
+property = true
+
+[enums.keys.KEY_CAPSLOCK]
+property = true
+
+[enums.keys.KEY_F1]
+property = true
+
+[enums.keys.KEY_F2]
+property = true
+
+[enums.keys.KEY_F3]
+property = true
+
+[enums.keys.KEY_F4]
+property = true
+
+[enums.keys.KEY_F5]
+property = true
+
+[enums.keys.KEY_F6]
+property = true
+
+[enums.keys.KEY_F7]
+property = true
+
+[enums.keys.KEY_F8]
+property = true
+
+[enums.keys.KEY_F9]
+property = true
+
+[enums.keys.KEY_F10]
+property = true
+
+[enums.keys.KEY_F11]
+property = true
+
+[enums.keys.KEY_F12]
+property = true
+
+[enums.keys.KEY_PRINTSCREEN]
+property = true
+
+[enums.keys.KEY_SCROLLLOCK]
+property = true
+
+[enums.keys.KEY_PAUSE]
+property = true
+
+[enums.keys.KEY_INSERT]
+property = true
+
+[enums.keys.KEY_HOME]
+property = true
+
+[enums.keys.KEY_PAGEUP]
+property = true
+
+[enums.keys.KEY_DELETE]
+property = true
+
+[enums.keys.KEY_END]
+property = true
+
+[enums.keys.KEY_F15]
+property = true
+
+[enums.keys.KEY_F16]
+property = true
+
+[enums.keys.KEY_F17]
+property = true
+
+[enums.keys.KEY_F18]
+property = true
+
+[enums.keys.KEY_F19]
+property = true
+
+[enums.keys.KEY_F20]
+property = true
+
+[enums.keys.KEY_F21]
+property = true
+
+[enums.keys.KEY_F22]
+property = true
+
+[enums.keys.KEY_F23]
+property = true
+
+[enums.keys.KEY_F24]
+property = true
+
+[enums.keys.KEY_EXECUTE]
+property = true
+
+[enums.keys.KEY_HELP]
+property = true
+
+[enums.keys.KEY_MENU]
+property = true
+
+[enums.keys.KEY_SELECT]
+property = true
+
+[enums.keys.KEY_STOP]
+property = true
+
+[enums.keys.KEY_AGAIN]
+property = true
+
+[enums.keys.KEY_UNDO]
+property = true
+
+[enums.keys.KEY_CUT]
+property = true
+
+[enums.keys.KEY_COPY]
+property = true
+
+[enums.keys.KEY_PASTE]
+property = true
+
+[enums.keys.KEY_FIND]
+property = true
+
+[enums.keys.KEY_MUTE]
+property = true
+
+[enums.keys.KEY_VOLUMEUP]
+property = true
+
+[enums.keys.KEY_VOLUMEDOWN]
+property = true
+
+[enums.keys.KEY_KP_COMMA]
+property = true
+
+[enums.keys.KEY_KP_EQUALSAS400]
+property = true
+
+[enums.keys.KEY_INTERNATIONAL1]
+property = true
+
+[enums.keys.KEY_INTERNATIONAL2]
+property = true
+
+[enums.keys.KEY_INTERNATIONAL3]
+property = true
+
+[enums.keys.KEY_INTERNATIONAL4]
+property = true
+
+[enums.keys.KEY_INTERNATIONAL5]
+property = true
+
+[enums.keys.KEY_INTERNATIONAL6]
+property = true
+
+[enums.keys.KEY_INTERNATIONAL7]
+property = true
+
+[enums.keys.KEY_INTERNATIONAL8]
+property = true
+
+[enums.keys.KEY_INTERNATIONAL9]
+property = true
+
+[enums.keys.KEY_LANG1]
+property = true
+
+[enums.keys.KEY_LANG2]
+property = true
+
+[enums.keys.KEY_LANG3]
+property = true
+
+[enums.keys.KEY_LANG4]
+property = true
+
+[enums.keys.KEY_LANG5]
+property = true
+
+[enums.keys.KEY_LANG6]
+property = true
+
+[enums.keys.KEY_LANG7]
+property = true
+
+[enums.keys.KEY_LANG8]
+property = true
+
+[enums.keys.KEY_LANG9]
+property = true
+
+[enums.keys.KEY_ALTERASE]
+property = true
+
+[enums.keys.KEY_SYSREQ]
+property = true
+
+[enums.keys.KEY_CANCEL]
+property = true
+
+[enums.keys.KEY_CLEAR]
+property = true
+
+[enums.keys.KEY_PRIOR]
+property = true
+
+[enums.keys.KEY_RETURN2]
+property = true
+
+[enums.keys.KEY_SEPARATOR]
+property = true
+
+[enums.keys.KEY_OUT]
+property = true
+
+[enums.keys.KEY_OPER]
+property = true
+
+[enums.keys.KEY_CLEARAGAIN]
+property = true
+
+[enums.keys.KEY_CRSEL]
+property = true
+
+[enums.keys.KEY_EXSEL]
+property = true
+
+[enums.keys.KEY_KP_00]
+property = true
+
+[enums.keys.KEY_KP_000]
+property = true
+
+[enums.keys.KEY_THOUSANDSSEPARATOR]
+property = true
+
+[enums.keys.KEY_DECIMALSEPARATOR]
+property = true
+
+[enums.keys.KEY_CURRENCYUNIT]
+property = true
+
+[enums.keys.KEY_CURRENCYSUBUNIT]
+property = true
+
+[enums.keys.KEY_KP_LEFTPAREN]
+property = true
+
+[enums.keys.KEY_KP_RIGHTPAREN]
+property = true
+
+[enums.keys.KEY_KP_LEFTBRACE]
+property = true
+
+[enums.keys.KEY_KP_RIGHTBRACE]
+property = true
+
+[enums.keys.KEY_KP_TAB]
+property = true
+
+[enums.keys.KEY_KP_BACKSPACE]
+property = true
+
+[enums.keys.KEY_KP_A]
+property = true
+
+[enums.keys.KEY_KP_4]
+property = true
+
+[enums.keys.KEY_KP_3]
+property = true
+
+[enums.keys.KEY_RIGHT]
+property = true
+
+[enums.keys.KEY_KP_EQUALS]
+property = true
+
+[enums.keys.KEY_F13]
+property = true
+
+[enums.keys.KEY_F14]
+property = true
+
+[enums.keys.KEY_KP_2]
+property = true
+
+[enums.keys.KEY_ESCAPE]
+property = true
+
+[enums.keys.KEY_W]
+property = true
+
+[enums.keys.KEY_3]
+property = true
+
+[enums.keys.KEY_KP_MINUS]
+property = true
+
+[enums.keys.KEY_KP_1]
+property = true
+
+[enums.keys.KEY_X]
+property = true
+
+[enums.keys.KEY_Y]
+property = true
+
+[enums.keys.KEY_Z]
+property = true
+
+[enums.keys.KEY_9]
+property = true
+
+[enums.keys.KEY_0]
+property = true
+
+[enums.keys.KEY_RETURN]
+property = true
+
+[enums.keys.KEY_PAGEDOWN]
+property = true
+
+[enums.keys.NUM_SCANCODES]
+property = true
+
+[enums.keys.KEY_4]
+property = true
+
+[enums.keys.KEY_LEFT]
+property = true
+
+[enums.keys.KEY_KP_MULTIPLY]
+property = true
+
+[enums.keys.KEY_MINUS]
+property = true
+
+[enums.keys.KEY_EQUALS]
+property = true
+
+[enums.keys.KEY_LEFTBRACKET]
+property = true
+
+[enums.keys.KEY_SPACE]
+property = true
+
+[enums.keys.KEY_TAB]
+property = true
+
+[enums.keys.KEY_BACKSPACE]
+property = true
+
+[enums.keys.KEY_KP_B]
+property = true
+
+[enums.keys.KEY_KP_C]
+property = true
+
+[enums.keys.KEY_KP_D]
+property = true
+
+[enums.keys.KEY_KP_E]
+property = true
+
+[enums.keys.KEY_KP_F]
+property = true
+
+[enums.keys.KEY_KP_XOR]
+property = true
+
+[enums.keys.KEY_KP_POWER]
+property = true
+
+[enums.keys.KEY_KP_PERCENT]
+property = true
+
+[enums.keys.KEY_KP_LESS]
+property = true
+
+[enums.keys.KEY_KP_GREATER]
+property = true
+
+[enums.keys.KEY_KP_AMPERSAND]
+property = true
+
+[enums.keys.KEY_KP_DBLAMPERSAND]
+property = true
+
+[enums.keys.KEY_KP_VERTICALBAR]
+property = true
+
+[enums.keys.KEY_KP_DBLVERTICALBAR]
+property = true
+
+[enums.keys.KEY_KP_COLON]
+property = true
+
+[enums.keys.KEY_KP_HASH]
+property = true
+
+[enums.keys.KEY_KP_SPACE]
+property = true
+
+[enums.keys.KEY_KP_AT]
+property = true
+
+[enums.keys.KEY_KP_EXCLAM]
+property = true
+
+[enums.keys.KEY_KP_MEMSTORE]
+property = true
+
+[enums.keys.KEY_KP_MEMRECALL]
+property = true
+
+[enums.keys.KEY_KP_MEMCLEAR]
+property = true
+
+[enums.keys.KEY_KP_MEMADD]
+property = true
+
+[enums.keys.KEY_KP_MEMSUBTRACT]
+property = true
+
+[enums.keys.KEY_KP_MEMMULTIPLY]
+property = true
+
+[enums.keys.KEY_KP_MEMDIVIDE]
+property = true
+
+[enums.keys.KEY_KP_PLUSMINUS]
+property = true
+
+[enums.keys.KEY_KP_CLEAR]
+property = true
+
+[enums.keys.KEY_KP_CLEARENTRY]
+property = true
+
+[enums.keys.KEY_KP_BINARY]
+property = true
+
+[enums.keys.KEY_KP_OCTAL]
+property = true
+
+[enums.keys.KEY_KP_DECIMAL]
+property = true
+
+[enums.keys.KEY_KP_HEXADECIMAL]
+property = true
+
+[enums.keys.KEY_LCTRL]
+property = true
+
+[enums.keys.KEY_LSHIFT]
+property = true
+
+[enums.keys.KEY_LALT]
+property = true
+
+[enums.keys.KEY_LGUI]
+property = true
+
+[enums.keys.KEY_RCTRL]
+property = true
+
+[enums.keys.KEY_RSHIFT]
+property = true
+
+[enums.keys.KEY_RALT]
+property = true
+
+[enums.keys.KEY_RGUI]
+property = true
+
+[enums.keys.KEY_MODE]
+property = true
+
+[enums.keys.KEY_AUDIONEXT]
+property = true
+
+[enums.keys.KEY_AUDIOPREV]
+property = true
+
+[enums.keys.KEY_AUDIOSTOP]
+property = true
+
+[enums.keys.KEY_AUDIOPLAY]
+property = true
+
+[enums.keys.KEY_AUDIOMUTE]
+property = true
+
+[enums.keys.KEY_MEDIASELECT]
+property = true
+
+[enums.keys.KEY_WWW]
+property = true
+
+[enums.keys.KEY_MAIL]
+property = true
+
+[enums.keys.KEY_CALCULATOR]
+property = true
+
+[enums.keys.KEY_COMPUTER]
+property = true
+
+[enums.keys.KEY_AC_SEARCH]
+property = true
+
+[enums.keys.KEY_AC_HOME]
+property = true
+
+[enums.keys.KEY_AC_BACK]
+property = true
+
+[enums.keys.KEY_AC_FORWARD]
+property = true
+
+[enums.keys.KEY_AC_STOP]
+property = true
+
+[enums.keys.KEY_AC_REFRESH]
+property = true
+
+[enums.keys.KEY_AC_BOOKMARKS]
+property = true
+
+[enums.keys.KEY_BRIGHTNESSDOWN]
+property = true
+
+[enums.keys.KEY_BRIGHTNESSUP]
+property = true
+
+[enums.keys.KEY_DISPLAYSWITCH]
+property = true
+
+[enums.keys.KEY_KBDILLUMTOGGLE]
+property = true
+
+[enums.keys.KEY_KBDILLUMDOWN]
+property = true
+
+[enums.keys.KEY_KBDILLUMUP]
+property = true
+
+[enums.keys.KEY_EJECT]
+property = true
+
+[enums.keys.KEY_SLEEP]
+property = true
+
+[enums.keys.KEY_APP1]
+property = true
+
+[enums.keys.KEY_APP2]
+property = true
+
+[enums.keys.KEY_AUDIOREWIND]
+property = true
+
+[enums.keys.KEY_AUDIOFASTFORWARD]
+property = true
+
+[enums.keys.KEY_UNKNOWN]
+property = true
+
+[enums.keys.KEY_A]
+property = true
+
+[enums.keys.KEY_B]
+property = true
+
+[enums.keys.KEY_C]
+property = true
+
+[enums.keys.KEY_D]
+property = true
+
+[enums.keys.KEY_E]
+property = true
+
+[enums.keys.KEY_F]
+property = true
+
+[enums.keys.KEY_G]
+property = true
+
+[enums.keys.KEY_H]
+property = true
+
+[enums.keys.KEY_I]
+property = true
+
+[enums.keys.KEY_J]
+property = true
+
+[enums.keys.KEY_K]
+property = true
+
+[enums.keys.KEY_L]
+property = true
+
+[enums.keys.KEY_M]
+property = true
+
+[enums.keys.KEY_N]
+property = true
+
+[enums.keys.KEY_O]
+property = true
+
+[enums.keys.KEY_P]
+property = true
+
+[enums.keys.KEY_Q]
+property = true
+
+[enums.keys.KEY_R]
+property = true
+
+[enums.keys.KEY_S]
+property = true
+
+[[gcinfo.args]]
+type = "..."
+required = false
+
+[_VERSION]
+property = true
+
+[[coroutine.create.args]]
+type = "..."
+required = false
+
+[[coroutine.yield.args]]
+type = "..."
+required = false
+
+[[coroutine.resume.args]]
+type = "..."
+required = false
+
+[[coroutine.wrap.args]]
+type = "..."
+required = false
+
+[[coroutine.status.args]]
+type = "..."
+required = false
+
+[[coroutine.running.args]]
+type = "..."
+required = false
+
+[[coroutine.isyieldable.args]]
+type = "..."
+required = false
+
+[_ARCH]
+property = true
+
+[_OS]
+property = true
+
+[_DEVICE_PAD_BOTTOM]
+property = true
+
+[113]
+property = true
+
+[_SERVER]
+property = true
+
+[_TEV_BUILD]
+property = true
+
+[_TEV_VERSION_PATCH]
+property = true
+
+[vector3]
+property = true
+
+[_TEV_VERSION_MAJOR]
+property = true
+
+[quaternion]
+property = true
+
+[[guiCoord.args]]
+type = "..."
+required = false
+
+[[warn.args]]
+type = "..."
+required = false
+
+[[math.atan2.args]]
+type = "..."
+required = false
+
+[[math.pow.args]]
+type = "..."
+required = false
+
+[[math.fmod.args]]
+type = "..."
+required = false
+
+[[math.ldexp.args]]
+type = "..."
+required = false
+
+[[math.min.args]]
+type = "..."
+required = false
+
+[[math.max.args]]
+type = "..."
+required = false
+
+[math.pi]
+property = true
+
+[math.huge]
+property = true
+
+[[math.random.args]]
+type = "..."
+required = false
+
+[[math.randomseed.args]]
+type = "..."
+required = false
+
+[[math.abs.args]]
+type = "..."
+required = false
+
+[[math.floor.args]]
+type = "..."
+required = false
+
+[[math.ceil.args]]
+type = "..."
+required = false
+
+[[math.sqrt.args]]
+type = "..."
+required = false
+
+[[math.log10.args]]
+type = "..."
+required = false
+
+[[math.exp.args]]
+type = "..."
+required = false
+
+[[math.sin.args]]
+type = "..."
+required = false
+
+[[math.cos.args]]
+type = "..."
+required = false
+
+[[math.tan.args]]
+type = "..."
+required = false
+
+[[math.asin.args]]
+type = "..."
+required = false
+
+[[math.acos.args]]
+type = "..."
+required = false
+
+[[math.atan.args]]
+type = "..."
+required = false
+
+[[math.sinh.args]]
+type = "..."
+required = false
+
+[[math.cosh.args]]
+type = "..."
+required = false
+
+[[math.tanh.args]]
+type = "..."
+required = false
+
+[[math.frexp.args]]
+type = "..."
+required = false
+
+[[math.modf.args]]
+type = "..."
+required = false
+
+[[math.log.args]]
+type = "..."
+required = false
+
+[[math.deg.args]]
+type = "..."
+required = false
+
+[[math.rad.args]]
+type = "..."
+required = false
+
+[[require.args]]
+type = "..."
+required = false
+
+[[assert.args]]
+type = "..."
+required = false
+
+[[string.sub.args]]
+type = "..."
+required = false
+
+[[string.rep.args]]
+type = "..."
+required = false
+
+[[string.reverse.args]]
+type = "..."
+required = false
+
+[[string.lower.args]]
+type = "..."
+required = false
+
+[[string.upper.args]]
+type = "..."
+required = false
+
+[[string.dump.args]]
+type = "..."
+required = false
+
+[[string.find.args]]
+type = "..."
+required = false
+
+[[string.match.args]]
+type = "..."
+required = false
+
+[[string.gmatch.args]]
+type = "..."
+required = false
+
+[[string.gsub.args]]
+type = "..."
+required = false
+
+[[string.format.args]]
+type = "..."
+required = false
+
+[[string.lastIndexOf.args]]
+type = "..."
+required = false
+
+[[string.startsWith.args]]
+type = "..."
+required = false
+
+[[string.endsWith.args]]
+type = "..."
+required = false
+
+[[string.split.args]]
+type = "..."
+required = false
+
+[[string.len.args]]
+type = "..."
+required = false
+
+[[string.byte.args]]
+type = "..."
+required = false
+
+[[string.char.args]]
+type = "..."
+required = false
+
+[_DEVICE]
+property = true
+
+[[thread.create.args]]
+type = "..."
+required = false
+
+[vector2]
+property = true
+
+[_TEV_VERSION_MINOR]
+property = true
+
+[_TEV_VERSION]
+property = true
+
+[[table.getn.args]]
+type = "..."
+required = false
+
+[[table.maxn.args]]
+type = "..."
+required = false
+
+[[table.insert.args]]
+type = "..."
+required = false
+
+[[table.remove.args]]
+type = "..."
+required = false
+
+[[table.move.args]]
+type = "..."
+required = false
+
+[[table.concat.args]]
+type = "..."
+required = false
+
+[[table.sort.args]]
+type = "..."
+required = false
+
+[[table.foreachi.args]]
+type = "..."
+required = false
+
+[[table.foreach.args]]
+type = "..."
+required = false
+
+[[os.clock.args]]
+type = "..."
+required = false
+
+[[os.date.args]]
+type = "..."
+required = false
+
+[[os.time.args]]
+type = "..."
+required = false
+
+[[os.difftime.args]]
+type = "..."
+required = false
+
+[[os.parseISO8601.args]]
+type = "..."
+required = false
+
+[[os.timeMS.args]]
+type = "..."
+required = false
+
+[[type.args]]
+type = "..."
+required = false
+
+[[next.args]]
+type = "..."
+required = false
+
+[[pairs.args]]
+type = "..."
+required = false
+
+[[ipairs.args]]
+type = "..."
+required = false
+
+[[print.args]]
+type = "..."
+required = false
+
+[[loadstring.args]]
+type = "..."
+required = false
+
+[[sleep.args]]
+type = "..."
+required = false
+
+[selene.structs.scene.gravity]
+property = true
+writable = "overridden"
+
+[selene.structs.scene.children]
+property = true
+
+[selene.structs.scene.simulate]
+property = true
+writable = "overridden"
+
+[selene.structs.scene.camera]
+struct = "camera"
+
+[selene.structs.scene.child]
+method = true
+
+[[selene.structs.scene.child.args]]
+required = true
+type = "string"
+
+[selene.structs.scene.raycast]
+method = true
+
+[[selene.structs.scene.raycast.args]]
+required = true
+type = { display = "vector3" }
+
+[[selene.structs.scene.raycast.args]]
+required = true
+type = { display = "vector3" }
+
+[[selene.structs.scene.raycast.args]]
+required = true
+type = { display = "sceneObject" }
+
+[[selene.structs.scene.raycast.args]]
+required = true
+type = "number"
+
+[selene.structs.scene.raycastOne]
+method = true
+
+[[selene.structs.scene.raycastOne.args]]
+required = true
+type = { display = "vector3" }
+
+[[selene.structs.scene.raycastOne.args]]
+required = true
+type = { display = "vector3" }
+
+[selene.structs.scene.destroyChildren]
+method = true
+
+[selene.structs.networking.clients]
+property = true
+
+[selene.structs.networking.isConnected]
+property = true
+
+[selene.structs.networking.localClient]
+property = true
+
+[selene.structs.networking.sendToServer]
+method = true
+
+[[selene.structs.networking.sendToServer.args]]
+required = true
+type = "string"
+
+[[selene.structs.networking.sendToServer.args]]
+required = false
+type = "..."
+
+[selene.structs.networking.start]
+method = true
+
+[selene.structs.networking.getStats]
+method = true
+
+[selene.structs.networking.broadcast]
+method = true
+
+[[selene.structs.networking.broadcast.args]]
+required = true
+type = "string"
+
+[[selene.structs.networking.broadcast.args]]
+required = false
+type = "..."
+
+[selene.structs.networking.getClient]
+method = true
+
+[[selene.structs.networking.getClient.args]]
+required = true
+type = "string"
+
+[selene.structs.networking.sendToClient]
+method = true
+
+[[selene.structs.networking.sendToClient.args]]
+required = true
+type = { display = "client" }
+
+[[selene.structs.networking.sendToClient.args]]
+required = true
+type = "string"
+
+[[selene.structs.networking.sendToClient.args]]
+required = false
+type = "..."
+
+[selene.structs.networking.initiate]
+method = true
+
+[[selene.structs.networking.initiate.args]]
+required = true
+type = "string"
+
+[selene.structs.apps.promptApp]
+method = true
+
+[selene.structs.apps.loadDashboard]
+method = true
+
+[selene.structs.apps.loadRemote]
+method = true
+
+[selene.structs.apps.localTest]
+method = true
+
+[selene.structs.apps.reset]
+method = true
+
+[selene.structs.apps.remoteTest]
+method = true
+
+[selene.structs.apps.upload]
+method = true
+
+[selene.structs.apps.reload]
+method = true
+
+[selene.structs.apps.recentDirectories]
+method = true
+
+[selene.structs.apps.runRecent]
+method = true
+
+[[selene.structs.apps.runRecent.args]]
+required = true
+type = "string"
+
+[selene.structs.apps.loadWorkshop]
+method = true
+
+[selene.structs.apps.promptAppDirectory]
+method = true
+
+[selene.structs.guiLine.lineAlpha]
+property = true
+writable = "overridden"
+
+[selene.structs.guiLine.pointA]
+property = true
+writable = "overridden"
+
+[selene.structs.guiLine.lineCap]
+property = true
+writable = "overridden"
+
+[selene.structs.guiLine.lineWidth]
+property = true
+writable = "overridden"
+
+[selene.structs.guiLine.lineColour]
+property = true
+writable = "overridden"
+
+[selene.structs.guiLine.pointB]
+property = true
+writable = "overridden"
+
+[selene.structs.guiGradientFrame.strokeColourB]
+property = true
+writable = "overridden"
+
+[selene.structs.guiGradientFrame.start]
+property = true
+writable = "overridden"
+
+[selene.structs.guiGradientFrame.strokeAlphaB]
+property = true
+writable = "overridden"
+
+[selene.structs.guiGradientFrame.backgroundColourB]
+property = true
+writable = "overridden"
+
+[selene.structs.guiGradientFrame.backgroundAlphaB]
+property = true
+writable = "overridden"
+
+[selene.structs.guiGradientFrame.finish]
+property = true
+writable = "overridden"
+
+[selene.structs.debug.schedulerUi]
+method = true
+
+[selene.structs.debug.clearOutputHistory]
+method = true
+
+[selene.structs.debug.traceback]
+method = true
+
+[selene.structs.debug.getOutputHistory]
+method = true
+
+[selene.structs.workshop.appLocation]
+property = true
+
+[selene.structs.workshop.promptOpen]
+method = true
+
+[selene.structs.workshop.openRecent]
+method = true
+
+[[selene.structs.workshop.openRecent.args]]
+required = true
+type = "string"
+
+[selene.structs.guiTextBox.textMultiline]
+property = true
+writable = "overridden"
+
+[selene.structs.guiTextBox.textAlpha]
+property = true
+writable = "overridden"
+
+[selene.structs.guiTextBox.textFont]
+property = true
+writable = "overridden"
+
+[selene.structs.guiTextBox.textShadowColour]
+property = true
+writable = "overridden"
+
+[selene.structs.guiTextBox.textShadowSize]
+property = true
+writable = "overridden"
+
+[selene.structs.guiTextBox.text]
+property = true
+writable = "overridden"
+
+[selene.structs.guiTextBox.textAlign]
+property = true
+writable = "overridden"
+
+[selene.structs.guiTextBox.textEditable]
+property = true
+writable = "overridden"
+
+[selene.structs.guiTextBox.textColour]
+property = true
+writable = "overridden"
+
+[selene.structs.guiTextBox.textDimensions]
+property = true
+
+[selene.structs.guiTextBox.textWrap]
+property = true
+writable = "overridden"
+
+[selene.structs.guiTextBox.textSize]
+property = true
+writable = "overridden"
+
+[selene.structs.guiTextBox.setFocus]
+method = true
+
+[selene.structs.guiLineBezier.controlA]
+property = true
+writable = "overridden"
+
+[selene.structs.guiLineBezier.controlB]
+property = true
+writable = "overridden"
+
+[selene.structs.reflection.getClassReflection]
+method = true
+
+[[selene.structs.reflection.getClassReflection.args]]
+required = true
+type = "string"
+
+[selene.structs.reflection.getClasses]
+method = true
+
+[selene.structs.dev.interface]
+property = true
+
+[selene.structs.dev.localTevGit]
+property = true
+
+[selene.structs.dev.localDevGitPath]
+property = true
+
+[selene.structs.dev.localDevGitEnabled]
+property = true
+
+[selene.structs.dev.promptDevGit]
+method = true
+
+[selene.structs.dev.reloadAllShaders]
+method = true
+
+[selene.structs.dev.startWebSocket]
+method = true
+
+[selene.structs.dev.stopWebSocket]
+method = true
+
+[selene.structs.dev.getWebSocketStatus]
+method = true
+
+[selene.structs.engine.outdated]
+property = true
+
+[selene.structs.engine.coreInterface]
+property = true
+
+[selene.structs.engine.approveConnection]
+method = true
+
+[[selene.structs.engine.approveConnection.args]]
+required = true
+type = "string"
+
+[selene.structs.engine.getUserToken]
+method = true
+
+[selene.structs.engine.openUrl]
+method = true
+
+[selene.structs.datastore.delete]
+method = true
+
+[[selene.structs.datastore.delete.args]]
+required = true
+type = "string"
+
+[selene.structs.datastore.put]
+method = true
+
+[[selene.structs.datastore.put.args]]
+required = true
+type = "string"
+
+[[selene.structs.datastore.put.args]]
+required = true
+type = "string"
+
+[selene.structs.datastore.get]
+method = true
+
+[[selene.structs.datastore.get.args]]
+required = true
+type = "string"
+
+[selene.structs.datastore.list]
+method = true
+
+[selene.structs.process.openUrl]
+method = true
+
+[selene.structs.client.name]
+property = true
+
+[selene.structs.client.beta]
+property = true
+
+[selene.structs.client.id]
+property = true
+
+[selene.structs.client.membership]
+property = true
+
+[selene.structs.guiHelper.bind]
+method = true
+
+[[selene.structs.guiHelper.bind.args]]
+required = true
+type = { display = "guiBase" }
+
+[[selene.structs.guiHelper.bind.args]]
+required = true
+type = { display = "breakpoint" }
+
+[[selene.structs.guiHelper.bind.args]]
+required = true
+type = "table"
+
+[selene.structs.guiHelper.hide]
+method = true
+
+[[selene.structs.guiHelper.hide.args]]
+required = true
+type = { display = "guiBase" }
+
+[[selene.structs.guiHelper.hide.args]]
+required = true
+type = { display = "breakpoint" }
+
+[selene.structs.guiHelper.show]
+method = true
+
+[[selene.structs.guiHelper.show.args]]
+required = true
+type = { display = "guiBase" }
+
+[[selene.structs.guiHelper.show.args]]
+required = true
+type = { display = "breakpoint" }
+
+[selene.structs.guiHelper.gridConstraint]
+method = true
+
+[[selene.structs.guiHelper.gridConstraint.args]]
+required = true
+type = { display = "guiBase" }
+
+[[selene.structs.guiHelper.gridConstraint.args]]
+required = true
+type = "table"
+
+[selene.structs.guiHelper.hoverColour]
+method = true
+
+[[selene.structs.guiHelper.hoverColour.args]]
+required = true
+type = { display = "guiBase" }
+
+[selene.structs.guiHelper.setupGrid]
+method = true
+
+[selene.structs.guiHelper.rehook]
+method = true
+
+[selene.structs.objectBase.id]
+property = true
+
+[selene.structs.objectBase.name]
+property = true
+writable = "overridden"
+
+[selene.structs.objectBase.destroy]
+method = true
+
+[selene.structs.guiRichTextBox.colours]
+property = true
+
+[selene.structs.guiRichTextBox.removeColour]
+method = true
+
+[[selene.structs.guiRichTextBox.removeColour.args]]
+required = true
+type = "number"
+
+[selene.structs.guiRichTextBox.setColour]
+method = true
+
+[[selene.structs.guiRichTextBox.setColour.args]]
+required = true
+type = "number"
+
+[[selene.structs.guiRichTextBox.setColour.args]]
+required = true
+type = { display = "colour" }
+
+[selene.structs.guiRichTextBox.clearColours]
+method = true
+
+[selene.structs.camera.position]
+property = true
+writable = "overridden"
+
+[selene.structs.camera.rotation]
+property = true
+writable = "overridden"
+
+[selene.structs.camera.fov]
+property = true
+writable = "overridden"
+
+[selene.structs.camera.worldToScreen]
+method = true
+
+[[selene.structs.camera.worldToScreen.args]]
+required = true
+type = { display = "vector3" }
+
+[selene.structs.camera.lookAt]
+method = true
+
+[[selene.structs.camera.lookAt.args]]
+required = true
+type = { display = "vector3" }
+
+[selene.structs.camera.screenToWorld]
+method = true
+
+[[selene.structs.camera.screenToWorld.args]]
+required = true
+type = { display = "vector2" }
+
+[selene.structs.audioEmitter.pitch]
+property = true
+writable = "overridden"
+
+[selene.structs.audioEmitter.rolloffFactor]
+property = true
+writable = "overridden"
+
+[selene.structs.audioEmitter.loop]
+property = true
+writable = "overridden"
+
+[selene.structs.audioEmitter.track]
+property = true
+writable = "overridden"
+
+[selene.structs.audioEmitter.maxDistance]
+property = true
+writable = "overridden"
+
+[selene.structs.audioEmitter.offset]
+property = true
+writable = "overridden"
+
+[selene.structs.audioEmitter.gain]
+property = true
+writable = "overridden"
+
+[selene.structs.audioEmitter.play]
+method = true
+
+[selene.structs.audioEmitter.pause]
+method = true
+
+[selene.structs.audioEmitter.stop]
+method = true
+
+[selene.structs.graphics.lowerAmbient]
+property = true
+writable = "overridden"
+
+[selene.structs.graphics.upperAmbient]
+property = true
+writable = "overridden"
+
+[selene.structs.graphics.clearColour]
+property = true
+writable = "overridden"
+
+[selene.structs.graphics.sky]
+property = true
+writable = "overridden"
+
+[selene.structs.graphics.ambientDirection]
+property = true
+writable = "overridden"
+
+[selene.structs.graphics.vendor]
+property = true
+
+[selene.structs.graphics.fogColour]
+property = true
+writable = "overridden"
+
+[selene.structs.graphics.device]
+property = true
+
+[selene.structs.graphics.fogLinearEnd]
+property = true
+writable = "overridden"
+
+[selene.structs.graphics.driver]
+property = true
+
+[selene.structs.graphics.fogLinearStart]
+property = true
+writable = "overridden"
+
+[selene.structs.graphics.fogDensity]
+property = true
+writable = "overridden"
+
+[selene.structs.graphics.fogType]
+property = true
+writable = "overridden"
+
+[selene.structs.graphics.getRenderer]
+method = true
+
+[selene.structs.graphics.getRenderers]
+method = true
+
+[selene.structs.graphics.setDebug]
+method = true
+
+[[selene.structs.graphics.setDebug.args]]
+required = true
+type = "bool"
+
+[selene.structs.graphics.setRenderer]
+method = true
+
+[[selene.structs.graphics.setRenderer.args]]
+required = true
+type = "string"
+
+[selene.structs.joint.name]
+property = true
+
+[selene.structs.joint.scale]
+property = true
+writable = "overridden"
+
+[selene.structs.joint.rotation]
+property = true
+writable = "overridden"
+
+[selene.structs.joint.position]
+property = true
+writable = "overridden"
+
+[selene.structs.settings.all]
+method = true
+
+[selene.structs.settings.get]
+method = true
+
+[[selene.structs.settings.get.args]]
+required = true
+type = "string"
+
+[selene.structs.settings.set]
+method = true
+
+[[selene.structs.settings.set.args]]
+required = true
+type = "string"
+
+[[selene.structs.settings.set.args]]
+required = true
+type = "string"
+
+[selene.structs.guiFrame.strokeAlpha]
+property = true
+writable = "overridden"
+
+[selene.structs.guiFrame.dropShadowColour]
+property = true
+writable = "overridden"
+
+[selene.structs.guiFrame.strokeColour]
+property = true
+writable = "overridden"
+
+[selene.structs.guiFrame.absolutePosition]
+property = true
+
+[selene.structs.guiFrame.backgroundColour]
+property = true
+writable = "overridden"
+
+[selene.structs.guiFrame.dropShadowAlpha]
+property = true
+writable = "overridden"
+
+[selene.structs.guiFrame.position]
+property = true
+writable = "overridden"
+
+[selene.structs.guiFrame.dropShadowOffset]
+property = true
+writable = "overridden"
+
+[selene.structs.guiFrame.size]
+property = true
+writable = "overridden"
+
+[selene.structs.guiFrame.strokeRadius]
+property = true
+writable = "overridden"
+
+[selene.structs.guiFrame.strokeWidth]
+property = true
+writable = "overridden"
+
+[selene.structs.guiFrame.absoluteSize]
+property = true
+
+[selene.structs.guiFrame.backgroundAlpha]
+property = true
+writable = "overridden"
+
+[selene.structs.guiFrame.dropShadowBlur]
+property = true
+writable = "overridden"
+
+[selene.structs.light.power]
+property = true
+writable = "overridden"
+
+[selene.structs.light.type]
+property = true
+writable = "overridden"
+
+[selene.structs.light.visible]
+property = true
+writable = "overridden"
+
+[selene.structs.light.spotlightFalloff]
+property = true
+writable = "overridden"
+
+[selene.structs.light.specularColour]
+property = true
+writable = "overridden"
+
+[selene.structs.light.spotlightInnerAngle]
+property = true
+writable = "overridden"
+
+[selene.structs.light.spotlightOuterAngle]
+property = true
+writable = "overridden"
+
+[selene.structs.light.diffuseColour]
+property = true
+writable = "overridden"
+
+[selene.structs.haptic.devices]
+property = true
+
+[selene.structs.haptic.supported]
+property = true
+
+[selene.structs.tween.begin]
+method = true
+
+[[selene.structs.tween.begin.args]]
+required = true
+type = "any"
+
+[[selene.structs.tween.begin.args]]
+required = true
+type = "number"
+
+[[selene.structs.tween.begin.args]]
+required = true
+type = "table"
+
+[[selene.structs.tween.begin.args]]
+required = true
+type = "string"
+
+[[selene.structs.tween.begin.args]]
+required = true
+type = "function"
+
+[selene.structs.tween.create]
+method = true
+
+[[selene.structs.tween.create.args]]
+required = true
+type = "any"
+
+[[selene.structs.tween.create.args]]
+required = true
+type = "number"
+
+[[selene.structs.tween.create.args]]
+required = true
+type = "table"
+
+[[selene.structs.tween.create.args]]
+required = true
+type = "string"
+
+[[selene.structs.tween.create.args]]
+required = true
+type = "function"
+
+[selene.structs.guiIcon.iconColour]
+property = true
+writable = "overridden"
+
+[selene.structs.guiIcon.iconMax]
+property = true
+writable = "overridden"
+
+[selene.structs.guiIcon.shadowColour]
+property = true
+writable = "overridden"
+
+[selene.structs.guiIcon.shadowSize]
+property = true
+writable = "overridden"
+
+[selene.structs.guiIcon.iconAlpha]
+property = true
+writable = "overridden"
+
+[selene.structs.guiIcon.iconId]
+property = true
+writable = "overridden"
+
+[selene.structs.guiIcon.iconType]
+property = true
+writable = "overridden"
+
+[selene.structs.http.delete]
+method = true
+
+[[selene.structs.http.delete.args]]
+required = true
+type = "string"
+
+[[selene.structs.http.delete.args]]
+required = true
+type = "string"
+
+[[selene.structs.http.delete.args]]
+required = false
+type = "table"
+
+[[selene.structs.http.delete.args]]
+required = false
+type = "function"
+
+[selene.structs.http.put]
+method = true
+
+[[selene.structs.http.put.args]]
+required = true
+type = "string"
+
+[[selene.structs.http.put.args]]
+required = true
+type = "string"
+
+[[selene.structs.http.put.args]]
+required = false
+type = "table"
+
+[[selene.structs.http.put.args]]
+required = false
+type = "function"
+
+[selene.structs.http.get]
+method = true
+
+[[selene.structs.http.get.args]]
+required = true
+type = "string"
+
+[[selene.structs.http.get.args]]
+required = false
+type = "table"
+
+[[selene.structs.http.get.args]]
+required = false
+type = "function"
+
+[selene.structs.http.post]
+method = true
+
+[[selene.structs.http.post.args]]
+required = true
+type = "string"
+
+[[selene.structs.http.post.args]]
+required = true
+type = "string"
+
+[[selene.structs.http.post.args]]
+required = false
+type = "table"
+
+[[selene.structs.http.post.args]]
+required = false
+type = "function"
+
+[selene.structs.base64.encode]
+method = true
+
+[[selene.structs.base64.encode.args]]
+required = true
+type = "string"
+
+[selene.structs.base64.decode]
+method = true
+
+[[selene.structs.base64.decode.args]]
+required = true
+type = "string"
+
+[selene.structs.guiImage.imageAlpha]
+property = true
+writable = "overridden"
+
+[selene.structs.guiImage.imageBottomRight]
+property = true
+writable = "overridden"
+
+[selene.structs.guiImage.patternScaleValues]
+property = true
+writable = "overridden"
+
+[selene.structs.guiImage.imageColour]
+property = true
+writable = "overridden"
+
+[selene.structs.guiImage.patternRotation]
+property = true
+writable = "overridden"
+
+[selene.structs.guiImage.imageTopLeft]
+property = true
+writable = "overridden"
+
+[selene.structs.guiImage.image]
+property = true
+writable = "overridden"
+
+[selene.structs.sceneObject.position]
+property = true
+writable = "overridden"
+
+[selene.structs.sceneObject.rotation]
+property = true
+writable = "overridden"
+
+[selene.structs.sceneObject.absoluteRotation]
+property = true
+
+[selene.structs.sceneObject.children]
+property = true
+
+[selene.structs.sceneObject.parent]
+property = true
+writable = "overridden"
+
+[selene.structs.sceneObject.absolutePosition]
+property = true
+
+[selene.structs.sceneObject.lookAt]
+method = true
+
+[[selene.structs.sceneObject.lookAt.args]]
+required = true
+type = { display = "vector3" }
+
+[selene.structs.io.write]
+method = true
+
+[[selene.structs.io.write.args]]
+required = true
+type = "string"
+
+[[selene.structs.io.write.args]]
+required = true
+type = "string"
+
+[selene.structs.io.list]
+method = true
+
+[selene.structs.io.read]
+method = true
+
+[[selene.structs.io.read.args]]
+required = true
+type = "string"
+
+[selene.structs.guiTriangle.pointB]
+property = true
+writable = "overridden"
+
+[selene.structs.guiTriangle.pointA]
+property = true
+writable = "overridden"
+
+[selene.structs.guiTriangle.strokeAlpha]
+property = true
+writable = "overridden"
+
+[selene.structs.guiTriangle.strokeWidth]
+property = true
+writable = "overridden"
+
+[selene.structs.guiTriangle.strokeColour]
+property = true
+writable = "overridden"
+
+[selene.structs.guiTriangle.backgroundAlpha]
+property = true
+writable = "overridden"
+
+[selene.structs.guiTriangle.backgroundColour]
+property = true
+writable = "overridden"
+
+[selene.structs.guiTriangle.pointC]
+property = true
+writable = "overridden"
+
+[selene.structs.guiScrollView.scrollbarWidth]
+property = true
+writable = "overridden"
+
+[selene.structs.guiScrollView.scrollbarColour]
+property = true
+writable = "overridden"
+
+[selene.structs.guiScrollView.scrollbarAlpha]
+property = true
+writable = "overridden"
+
+[selene.structs.guiScrollView.scrollbarRadius]
+property = true
+writable = "overridden"
+
+[selene.structs.guiScrollView.canvasOffset]
+property = true
+writable = "overridden"
+
+[selene.structs.guiScrollView.canvasSize]
+property = true
+writable = "overridden"
+
+[selene.structs.guiBase.rotation]
+property = true
+writable = "overridden"
+
+[selene.structs.guiBase.visible]
+property = true
+writable = "overridden"
+
+[selene.structs.guiBase.active]
+property = true
+writable = "overridden"
+
+[selene.structs.guiBase.zIndex]
+property = true
+writable = "overridden"
+
+[selene.structs.guiBase.children]
+property = true
+
+[selene.structs.guiBase.parent]
+property = true
+writable = "overridden"
+
+[selene.structs.guiBase.clip]
+property = true
+writable = "overridden"
+
+[selene.structs.guiBase.destroyChildren]
+method = true
+
+[selene.structs.guiBase.child]
+method = true
+
+[[selene.structs.guiBase.child.args]]
+required = true
+type = "string"
+
+[selene.structs.block.animations]
+property = true
+
+[selene.structs.block.inheritsRotation]
+property = true
+writable = "overridden"
+
+[selene.structs.block.inheritsScale]
+property = true
+writable = "overridden"
+
+[selene.structs.block.emissiveColour]
+property = true
+writable = "overridden"
+
+[selene.structs.block.renderQueue]
+property = true
+writable = "overridden"
+
+[selene.structs.block.static]
+property = true
+writable = "overridden"
+
+[selene.structs.block.metalness]
+property = true
+writable = "overridden"
+
+[selene.structs.block.meshScale]
+property = true
+
+[selene.structs.block.roughness]
+property = true
+writable = "overridden"
+
+[selene.structs.block.mesh]
+property = true
+writable = "overridden"
+
+[selene.structs.block.alpha]
+property = true
+writable = "overridden"
+
+[selene.structs.block.scale]
+property = true
+writable = "overridden"
+
+[selene.structs.block.angularVelocity]
+property = true
+writable = "overridden"
+
+[selene.structs.block.wireframe]
+property = true
+writable = "overridden"
+
+[selene.structs.block.linearFactor]
+property = true
+writable = "overridden"
+
+[selene.structs.block.simulated]
+property = true
+writable = "overridden"
+
+[selene.structs.block.angularFactor]
+property = true
+writable = "overridden"
+
+[selene.structs.block.velocity]
+property = true
+writable = "overridden"
+
+[selene.structs.block.visible]
+property = true
+writable = "overridden"
+
+[selene.structs.block.colour]
+property = true
+writable = "overridden"
+
+[selene.structs.block.joints]
+property = true
+
+[selene.structs.block.setAnimationSpeed]
+method = true
+
+[[selene.structs.block.setAnimationSpeed.args]]
+required = true
+type = "number"
+
+[selene.structs.block.applyImpulseAtPosition]
+method = true
+
+[[selene.structs.block.applyImpulseAtPosition.args]]
+required = true
+type = { display = "vector3" }
+
+[selene.structs.block.applyForceAtPosition]
+method = true
+
+[[selene.structs.block.applyForceAtPosition.args]]
+required = true
+type = { display = "vector3" }
+
+[selene.structs.block.applyImpulse]
+method = true
+
+[[selene.structs.block.applyImpulse.args]]
+required = true
+type = { display = "vector3" }
+
+[selene.structs.block.stopAnimation]
+method = true
+
+[selene.structs.block.applyTorqueImpulse]
+method = true
+
+[[selene.structs.block.applyTorqueImpulse.args]]
+required = true
+type = { display = "vector3" }
+
+[selene.structs.block.applyTorque]
+method = true
+
+[[selene.structs.block.applyTorque.args]]
+required = true
+type = { display = "vector3" }
+
+[selene.structs.block.playAnimation]
+method = true
+
+[[selene.structs.block.playAnimation.args]]
+required = true
+type = "string"
+
+[[selene.structs.block.playAnimation.args]]
+required = false
+type = "bool"
+
+[[selene.structs.block.playAnimation.args]]
+required = false
+type = "number"
+
+[selene.structs.block.applyForce]
+method = true
+
+[[selene.structs.block.applyForce.args]]
+required = true
+type = { display = "vector3" }
+
+[selene.structs.block.setAnimationLoop]
+method = true
+
+[[selene.structs.block.setAnimationLoop.args]]
+required = true
+type = "bool"
+
+[selene.structs.block.getJoint]
+method = true
+
+[[selene.structs.block.getJoint.args]]
+required = true
+type = "string"
+
+[selene.structs.input.screenSize]
+property = true
+
+[selene.structs.input.screenPaddingLeft]
+property = true
+
+[selene.structs.input.hasTouchInput]
+property = true
+
+[selene.structs.input.screenPaddingRight]
+property = true
+
+[selene.structs.input.screenPaddingBottom]
+property = true
+
+[selene.structs.input.screenPaddingTop]
+property = true
+
+[selene.structs.input.hasScreenKeyboard]
+property = true
+
+[selene.structs.input.mousePosition]
+property = true
+
+[selene.structs.input.isKeyDown]
+method = true
+
+[[selene.structs.input.isKeyDown.args]]
+required = true
+type = { display = "keyCode" }
+
+[selene.structs.input.isMouseButtonDown]
+method = true
+
+[[selene.structs.input.isMouseButtonDown.args]]
+required = true
+type = "number"
+
+[selene.structs.json.encode]
+method = true
+
+[[selene.structs.json.encode.args]]
+required = true
+type = "any"
+
+[selene.structs.json.decode]
+method = true
+
+[[selene.structs.json.decode.args]]
+required = true
+type = "string"
+
+[selene.structs.json.encodeWithTypes]
+method = true
+
+[[selene.structs.json.encodeWithTypes.args]]
+required = true
+type = "any"

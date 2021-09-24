@@ -1,0 +1,15 @@
+{
+    "schema": 1,
+    "id": "deviact",
+    "name": "deviact",
+    "isApp": false,
+    "version": "0.0.1",
+    "permissions": {
+        "client": {
+            "construct": true,
+            "disconnect": true,
+            "input": true,
+            "interface": true
+        }
+    }
+}
