@@ -39,7 +39,7 @@ function eventManager:newEvent(eventName, callback)
 					args = {
 						n = select("#", ...),
 						...
-					} 
+					}
 				}
 			end
 		end)
@@ -80,8 +80,11 @@ function eventManager:resume()
 	self._status = "running"
 end
 
-function eventManager:isRunning()
-	return self._status == "running"
+function eventManager:clearAll()
+	for key, eventNode in next, self._eventList do
+		core.disconnect(eventNode.id)
+		self._eventList[key] = nil
+	end
 end
 
 return eventManager

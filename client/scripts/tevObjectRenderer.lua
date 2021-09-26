@@ -60,7 +60,7 @@ return {
 			node.element.element,
 			{
 				parent = node.parent,
-				name = tostring(node.key)	
+				name = tostring(node.key)
 			}
 		)
 
@@ -115,6 +115,11 @@ return {
 			error("Cannot unmount a unmounted node.", 2)
 		end
 
+		if node.eventManager then
+			node.eventManager:cleanAll()
+			node.eventManager = nil
+		end
+
 		for _, cleanUpBinding in next, node.bindings do
 			cleanUpBinding()
 		end
@@ -124,9 +129,9 @@ return {
 		if node.element.props[".ref"] then
 			node.element.props[".ref"]:update(nil)
 		end
-		
+
 		renderer.unmountChildren(node)
-		
+
 		node.tevObject:destroy()
 		node.tevObject = nil
 	end
