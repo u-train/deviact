@@ -3,7 +3,7 @@
     "id": "deviact",
     "name": "deviact",
     "isApp": false,
-    "version": "0.0.2",
+    "version": "0.0.3",
     "permissions": {
         "client": {
             "construct": true,
