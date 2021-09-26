@@ -15,6 +15,3 @@ renderer.mountElement(
 	}),
 	core.interface
 )
-
-print(aRef:value().parent)
-print(bRef:value().parent)

@@ -70,7 +70,6 @@ return {
 			applyProp(node, propName, propValue, nil)
 		end
 
-		print(node.element.type)
 		renderer.mountChildren(node, node.tevObject, node.element.props.children)
 
 		if node.element.props[".ref"] then
