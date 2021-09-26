@@ -1,7 +1,13 @@
 return function(element, props)
 	local elementType 
 	if type(element) == "string" then
-		elementType = "tevObject"
+		if element == ".fragment" then
+			elementType = "fragment"
+		elseif element == ".portal" then
+			elementType = "portal"
+		else
+			elementType = "tevObject"
+		end
 	elseif type(element) == "function" then
 		elementType = "functional"
 	else

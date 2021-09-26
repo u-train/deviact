@@ -1,6 +1,7 @@
 local elementRenderers = {
 	tevObject = require("./tevObjectRenderer.lua"),
-	functional = require("./functionalRenderer.lua")
+	functional = require("./functionalRenderer.lua"),
+	fragment = require("./fragmentRenderer.lua")
 }
 
 local renderer = {}
