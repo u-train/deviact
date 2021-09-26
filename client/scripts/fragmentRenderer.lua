@@ -7,5 +7,5 @@ return {
 	end,
 	unmount = function(renderer, node)
 		renderer.unmountChildren(node)
-	end
+	end,
 }

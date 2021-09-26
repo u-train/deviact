@@ -1,4 +1,4 @@
-local newHooks = require("./hooks.lua")
+local newHooks = require "./hooks.lua"
 
 return {
 	mount = function(renderer, node)
@@ -13,7 +13,7 @@ return {
 	end,
 	diff = function(renderer, node, incomingElement)
 		local element = incomingElement.element
-	
+
 		local hooks = newHooks(renderer, node)
 		local newResult = element(incomingElement.props, hooks)
 
@@ -29,5 +29,5 @@ return {
 
 		node.hooks = nil
 		renderer.unmountChildren(node)
-	end
+	end,
 }

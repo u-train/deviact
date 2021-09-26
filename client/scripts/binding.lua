@@ -2,13 +2,7 @@ local binding = { type = "binding" }
 binding.__index = binding
 
 function binding.new(startingValue)
-	return setmetatable(
-		{
-			_value = startingValue,
-			next = nil,
-		},
-		binding
-	)
+	return setmetatable({ _value = startingValue, next = nil }, binding)
 end
 
 function binding:update(value)
@@ -29,23 +23,15 @@ end
 function binding:map(mapper)
 	local newBinder = binding.new()
 
-	self:connect(
-		function(value)
-			newBinder:update(
-				mapper(value)
-			)
-		end
-	)
+	self:connect(function(value)
+		newBinder:update(mapper(value))
+	end)
 
 	return newBinder
 end
 
 function binding:connect(callback)
-	local newNode = {
-		prev = nil,
-		callback = callback,
-		next = nil
-	}
+	local newNode = { prev = nil, callback = callback, next = nil }
 
 	local tail = self
 	while tail.next do

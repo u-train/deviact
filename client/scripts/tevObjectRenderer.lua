@@ -1,5 +1,5 @@
-local getDefaultValue = require("./getDefaultValue.lua")
-local eventManager = require("./eventManager.lua")
+local getDefaultValue = require "./getDefaultValue.lua"
+local eventManager = require "./eventManager.lua"
 
 local applyProp = function(node, propName, newPropValue, oldPropValue)
 	if propName == "children" or propName == ".ref" then
@@ -17,21 +17,19 @@ local applyProp = function(node, propName, newPropValue, oldPropValue)
 				node.bindings = nil
 			end
 
-			node.bindings[propName] = newPropValue:connect(
-				function(value)
-					node.tevObject[propName] = value
-				end
-			)
+			node.bindings[propName] = newPropValue:connect(function(value)
+				node.tevObject[propName] = value
+			end)
 		end
 		newPropValue = newPropValue:value()
 	else
-		if  node.bindings[propName] then
+		if node.bindings[propName] then
 			node.bindings[propName]()
 			node.bindings = nil
 		end
 	end
 
-	if propName:match("^%w*$") then
+	if propName:match "^%w*$" then
 		if newPropValue == nil then
 			node.tevObject[propName] = getDefaultValue(node.element, propName)
 		else
@@ -41,14 +39,12 @@ local applyProp = function(node, propName, newPropValue, oldPropValue)
 		return
 	end
 
-	if propName:match("event%.") then
+	if propName:match "event%." then
 		if node.eventManager == nil then
-			node.eventManager = eventManager.new(
-				node.tevObject
-			)
+			node.eventManager = eventManager.new(node.tevObject)
 		end
 
-		local eventName = propName:match("%.(%w*)$")
+		local eventName = propName:match "%.(%w*)$"
 		node.eventManager:setEvent(eventName, newPropValue)
 		return
 	end
@@ -58,10 +54,7 @@ return {
 	mount = function(renderer, node)
 		node.tevObject = core.construct(
 			node.element.element,
-			{
-				parent = node.parent,
-				name = tostring(node.key)
-			}
+			{ parent = node.parent, name = tostring(node.key) }
 		)
 
 		node.bindings = {}
@@ -70,12 +63,15 @@ return {
 			applyProp(node, propName, propValue, nil)
 		end
 
-		renderer.mountChildren(node, node.tevObject, node.element.props.children)
+		renderer.mountChildren(
+			node,
+			node.tevObject,
+			node.element.props.children
+		)
 
 		if node.element.props[".ref"] then
 			node.element.props[".ref"]:update(node.tevObject)
 		end
-
 
 		if node.eventManager then
 			node.eventManager:resume()
@@ -90,14 +86,28 @@ return {
 		end
 
 		for oldPropName, oldPropValue in next, node.element.props do
-			applyProp(node, oldPropName, incomingElement.props[oldPropName], oldPropValue)
+			applyProp(
+				node,
+				oldPropName,
+				incomingElement.props[oldPropName],
+				oldPropValue
+			)
 		end
 
 		for newPropName, newPropValue in next, incomingElement.props do
-			applyProp(node, newPropName, newPropValue, node.element.props[newPropName])
+			applyProp(
+				node,
+				newPropName,
+				newPropValue,
+				node.element.props[newPropName]
+			)
 		end
 
-		renderer.diffChildren(node, node.tevObject, incomingElement.props.children)
+		renderer.diffChildren(
+			node,
+			node.tevObject,
+			incomingElement.props.children
+		)
 
 		node.element = incomingElement
 
@@ -134,5 +144,5 @@ return {
 
 		node.tevObject:destroy()
 		node.tevObject = nil
-	end
+	end,
 }

@@ -1,14 +1,14 @@
 local elementRenderers = {
-	tevObject = require("./tevObjectRenderer.lua"),
-	functional = require("./functionalRenderer.lua"),
-	fragment = require("./fragmentRenderer.lua")
+	tevObject = require "./tevObjectRenderer.lua",
+	functional = require "./functionalRenderer.lua",
+	fragment = require "./fragmentRenderer.lua",
 }
 
 local renderer = {}
 
 local createNode = function(element, parent, key)
 	if element == nil then
-		error("cannot create a node without an element.")
+		error "cannot create a node without an element."
 	end
 
 	return {
@@ -41,10 +41,8 @@ renderer.mountNode = function(node)
 		error("node does not have a key, was this intended?", 2)
 	end
 
-	local elementType = node.element.type
-	;(
-		elementRenderers[elementType].mount
-	)(renderer, node)
+	local elementType = node.element.type;
+	(elementRenderers[elementType].mount)(renderer, node)
 
 	node.mounted = true
 end
@@ -55,7 +53,7 @@ renderer.diffNode = function(node, incomingElement)
 	end
 
 	if node.mounted == false then
-		error("cannot diff a node that isn't mounted")
+		error "cannot diff a node that isn't mounted"
 	end
 
 	if node.element.element ~= incomingElement.element then
@@ -65,11 +63,8 @@ renderer.diffNode = function(node, incomingElement)
 		return
 	end
 
-	local elementType = node.element.type
-
-	;(
-		elementRenderers[elementType].diff
-	)(renderer, node, incomingElement)
+	local elementType = node.element.type;
+	(elementRenderers[elementType].diff)(renderer, node, incomingElement)
 end
 
 renderer.diffChildren = function(node, parent, incomingChildren)
@@ -78,7 +73,11 @@ renderer.diffChildren = function(node, parent, incomingChildren)
 			if node.children[newChildKey] then
 				renderer.diffNode(node.children[newChildKey], newChildElement)
 			else
-				node.children[newChildKey] = renderer.mountElement(newChildElement, parent, newChildKey)
+				node.children[newChildKey] = renderer.mountElement(
+					newChildElement,
+					parent,
+					newChildKey
+				)
 			end
 		else
 			if node.children[newChildKey] ~= nil then
@@ -105,7 +104,11 @@ end
 
 renderer.mountChildren = function(node, parent, incomingChildren)
 	for childKey, childElement in next, incomingChildren do
-		node.children[childKey] = renderer.mountElement(childElement, parent, childKey)
+		node.children[childKey] = renderer.mountElement(
+			childElement,
+			parent,
+			childKey
+		)
 	end
 end
 
@@ -118,17 +121,14 @@ renderer.unmountNode = function(node)
 		error("Cannot unmount a unmounted node.", 2)
 	end
 
-	local elementType = node.element.type
-
-	;(
-		elementRenderers[elementType].unmount
-	)(renderer, node)
+	local elementType = node.element.type;
+	(elementRenderers[elementType].unmount)(renderer, node)
 
 	node.mounted = false
 end
 
 renderer.mountElement = function(element, parent, key)
-	local node = createNode(element, parent, key or "deviact."..element.type)
+	local node = createNode(element, parent, key or "deviact." .. element.type)
 
 	renderer.mountNode(node)
 

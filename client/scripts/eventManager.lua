@@ -2,15 +2,12 @@ local eventManager = {}
 eventManager.__index = eventManager
 
 function eventManager.new(tevObject)
-	return setmetatable(
-		{
-			_tevObject = tevObject,
-			_status = "paused", -- paused, running, resuming
-			_eventList = {},
-			_queuedEvents = {}
-		},
-		eventManager
-	)
+	return setmetatable({
+		_tevObject = tevObject,
+		_status = "paused", -- paused, running, resuming
+		_eventList = {},
+		_queuedEvents = {},
+	}, eventManager)
 end
 
 function eventManager:setEvent(eventName, callback)
@@ -36,13 +33,10 @@ function eventManager:newEvent(eventName, callback)
 			else
 				self._queuedEvents[#self._queuedEvents + 1] = {
 					event = eventName,
-					args = {
-						n = select("#", ...),
-						...
-					}
+					args = { n = select("#", ...), ... },
 				}
 			end
-		end)
+		end),
 	}
 end
 
@@ -59,8 +53,12 @@ function eventManager:pause()
 end
 
 function eventManager:resume()
-	if self._status ~= "paused" then return end
-	if self._status == "running" then return end
+	if self._status ~= "paused" then
+		return
+	end
+	if self._status == "running" then
+		return
+	end
 	self._status = "resuming"
 
 	local i = 1

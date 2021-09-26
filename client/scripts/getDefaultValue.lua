@@ -9,9 +9,7 @@ return function(className, propertyName)
 	if classDefaultValueList[className][propertyName] then
 		defaultValue = classDefaultValueList[className][propertyName]
 	else
-		local object = core.construct(className, {
-			parent = core.interface
-		})
+		local object = core.construct(className, { parent = core.interface })
 		defaultValue = object[propertyName]
 		classDefaultValueList[className][propertyName] = defaultValue
 		object:destroy()

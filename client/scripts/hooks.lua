@@ -1,4 +1,4 @@
-local bindings = require("./binding.lua")
+local bindings = require "./binding.lua"
 
 return function(renderer, node)
 	local hooks = node.hooks
@@ -20,24 +20,30 @@ return function(renderer, node)
 
 			local state = (hooks[capturedUseCount])[1]
 
-			return state, function(newState)
-				hooks[capturedUseCount][1] = newState
-				renderer.diffNode(node, node.element)
-			end
+			return state,
+				function(newState)
+					hooks[capturedUseCount][1] = newState
+					renderer.diffNode(node, node.element)
+				end
 		end,
 		useEffect = function(effect, dependencies)
 			local capturedUseCount = captureUseCount()
 			local effectContainer = hooks[capturedUseCount]
 
 			if effectContainer == nil then
-				hooks[capturedUseCount] = { effect = effect, cleanUp = nil, lastCapturedDependencies = dependencies }
-				effectsQueued[#effectsQueued + 1] = hooks[capturedUseCount] 
+				hooks[capturedUseCount] = {
+					effect = effect,
+					cleanUp = nil,
+					lastCapturedDependencies = dependencies,
+				}
+				effectsQueued[#effectsQueued + 1] = hooks[capturedUseCount]
 				return
 			end
 
 			local changed = false
 			for index, currentDependency in next, dependencies do
-				local lastCapturedDependency = effectContainer.lastCapturedDependencies[index]
+				local lastCapturedDependency =
+					effectContainer.lastCapturedDependencies[index]
 				if lastCapturedDependency ~= currentDependency then
 					changed = true
 					break
@@ -47,7 +53,7 @@ return function(renderer, node)
 			if not changed then
 				return
 			end
-			
+
 			effectsQueued[#effectsQueued + 1] = effectContainer
 		end,
 		useBinding = function(startingValue)
@@ -67,6 +73,6 @@ return function(renderer, node)
 
 				effectContainer.cleanUp = effectContainer.effect()
 			end
-		end
+		end,
 	}
 end
