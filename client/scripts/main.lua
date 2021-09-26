@@ -2,16 +2,12 @@ local renderer = require("./renderer.lua")
 local createElement = require("./createElement.lua")
 local binding = require("./binding.lua")
 
-local aRef = binding.new()
-local bRef = binding.new()
-
-
-renderer.mountElement(
-	createElement(".fragment", {
-		children = {
-			a = createElement("guiFrame", { [".ref"] = aRef }),
-			b = createElement("guiFrame", { [".ref"] = bRef })
-		}
-	}),
-	core.interface
-)
+return {
+	createElement = createElement,
+	binding = binding,
+	newBinding = binding.new,
+	mount = renderer.mountElement,
+	mountNode = renderer.mountNode,
+	diff = renderer.diffNode,
+	unmount = renderer.unmountNode
+}

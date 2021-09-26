@@ -15,7 +15,7 @@ local createNode = function(element, parent, key)
 		element = element,
 		key = key,
 		mounted = false,
-		
+
 		parent = parent,
 		children = {},
 
@@ -40,7 +40,7 @@ renderer.mountNode = function(node)
 	if node.key == nil then
 		error("node does not have a key, was this intended?", 2)
 	end
-	
+
 	local elementType = node.element.type
 	;(
 		elementRenderers[elementType].mount
@@ -75,7 +75,7 @@ end
 renderer.diffChildren = function(node, parent, incomingChildren)
 	for newChildKey, newChildElement in next, incomingChildren do
 		if type(newChildElement) ~= "boolean" then
-			if node.children[newChildKey] then 
+			if node.children[newChildKey] then
 				renderer.diffNode(node.children[newChildKey], newChildElement)
 			else
 				node.children[newChildKey] = renderer.mountElement(newChildElement, parent, newChildKey)
@@ -93,7 +93,7 @@ renderer.diffChildren = function(node, parent, incomingChildren)
 			renderer.unmountNode(oldChildNode)
 			node.children[oldChildKey] = nil
 		end
-	end 
+	end
 end
 
 renderer.unmountChildren = function(node)
@@ -117,7 +117,7 @@ renderer.unmountNode = function(node)
 	if node.mounted == false then
 		error("Cannot unmount a unmounted node.", 2)
 	end
- 
+
 	local elementType = node.element.type
 
 	;(
@@ -127,7 +127,7 @@ renderer.unmountNode = function(node)
 	node.mounted = false
 end
 
-renderer.mountElement = function(element, parent, key)	
+renderer.mountElement = function(element, parent, key)
 	local node = createNode(element, parent, key or "deviact."..element.type)
 
 	renderer.mountNode(node)
