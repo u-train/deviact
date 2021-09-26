@@ -8,7 +8,8 @@ return {
 		local hooks = newHooks(renderer, node)
 		local result = element(node.element.props, hooks)
 
-		node.children[1] = renderer.mountElement(result, node.parent, node.key)
+		renderer.mountChildren(node, node.parent, { result })
+		hooks.runEffects()
 	end,
 	diff = function(renderer, node, incomingElement)
 		local element = incomingElement.element
@@ -16,12 +17,17 @@ return {
 		local hooks = newHooks(renderer, node)
 		local newResult = element(incomingElement.props, hooks)
 
-		-- For memorization
-		-- if newResult ~= node.children[1].element then
-			renderer.diffNode(node.children[1], newResult)
-		-- end
+		renderer.diffChildren(node, node.parent, { newResult })
+		hooks.runEffects()
 	end,
 	unmount = function(renderer, node)
-		renderer.unmountNode(table.remove(node.children, 1))
+		for _, hook in next, node.hooks do
+			if hook.cleanUp then
+				hook.cleanUp()
+			end
+		end
+
+		node.hooks = nil
+		renderer.unmountChildren(node)
 	end
 }

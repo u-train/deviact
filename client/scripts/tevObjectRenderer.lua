@@ -2,12 +2,33 @@ local getDefaultValue = require("./getDefaultValue.lua")
 local eventManager = require("./eventManager.lua")
 
 local applyProp = function(node, propName, newPropValue, oldPropValue)
-	if propName == "children" then
+	if propName == "children" or propName == ".ref" then
 		return
 	end
 
 	if newPropValue == oldPropValue then
 		return
+	end
+
+	if type(newPropValue) == "table" and newPropValue.type == "binding" then
+		if newPropValue ~= oldPropValue then
+			if node.bindings[propName] then
+				node.bindings[propName]()
+				node.bindings = nil
+			end
+
+			node.bindings[propName] = newPropValue:connect(
+				function(value)
+					node.tevObject[propName] = value
+				end
+			)
+		end
+		newPropValue = newPropValue:value()
+	else
+		if  node.bindings[propName] then
+			node.bindings[propName]()
+			node.bindings = nil
+		end
 	end
 
 	if propName:match("^%w*$") then
@@ -43,17 +64,24 @@ return {
 			}
 		)
 
+		node.bindings = {}
+
 		for propName, propValue in next, node.element.props do
 			applyProp(node, propName, propValue, nil)
 		end
 
-		for childKey, childElement in next, node.element.props.children do
-			node.children[childKey] = renderer.mountElement(childElement, node.tevObject, childKey)
+		print(node.element.type)
+		renderer.mountChildren(node, node.tevObject, node.element.props.children)
+
+		if node.element.props[".ref"] then
+			node.element.props[".ref"]:update(node.tevObject)
 		end
+
 
 		if node.eventManager then
 			node.eventManager:resume()
 		end
+
 		return node
 	end,
 
@@ -70,20 +98,7 @@ return {
 			applyProp(node, newPropName, newPropValue, node.element.props[newPropName])
 		end
 
-		for newChildKey, newChildElement in next, incomingElement.props.children do
-			if node.children[newChildKey] then
-				renderer.diffNode(node.children[newChildKey], newChildElement)
-			else
-				node.children[newChildKey] = renderer.mountElement(newChildElement, node.tevObject, newChildKey)
-			end
-		end
-
-		for oldChildKey, oldChildNode in next, node.element.props.children do
-			if incomingElement.children[oldChildKey] == nil then
-				renderer.unmountNode(oldChildNode)
-				node.children[oldChildKey] = nil
-			end
-		end 
+		renderer.diffChildren(node, node.tevObject, incomingElement.props.children)
 
 		node.element = incomingElement
 
@@ -94,17 +109,25 @@ return {
 
 	unmount = function(renderer, node)
 		if node == nil then
-			error("bad argument #1, node expected got nil.", 2)
+			error("bad argument #2, node expected got nil.", 2)
 		end
 
 		if node.mounted == false then
 			error("Cannot unmount a unmounted node.", 2)
 		end
 
-		for childKey, childElement in next, node.element.children do
-			node.children[childKey] = renderer.unmountNode(childElement, node.tevObject, childKey)
+		for _, cleanUpBinding in next, node.bindings do
+			cleanUpBinding()
 		end
 
+		node.bindings = nil
+
+		if node.element.props[".ref"] then
+			node.element.props[".ref"]:update(nil)
+		end
+		
+		renderer.unmountChildren(node)
+		
 		node.tevObject:destroy()
 		node.tevObject = nil
 	end

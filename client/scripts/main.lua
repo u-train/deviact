@@ -1,24 +1,12 @@
--- --[[
--- 	node = {
--- 		element = element,
-
--- 		nodeParent = nil,
--- 		hostParent = nil,
--- 		hostName = "",
-
--- 		mounted = true,
--- 		children = {}
-
--- 		tevObject = nil,
--- 		bindings = {}
--- 	}
--- ]]
-
 local renderer = require("./renderer.lua")
 local createElement = require("./createElement.lua")
 
 local flashComponent = function(props, hooks)
-	local currentFlashedColour, updateFlashedColour = hooks.useState(props.startingColour)
+	local text, updateText = hooks.useState("12")
+
+	local colourBinding = hooks.useBinding(props.startingColour)
+	local textRef = hooks.useBinding()
+
 	hooks.useEffect(
 		function()
 			local running = true
@@ -26,7 +14,7 @@ local flashComponent = function(props, hooks)
 				function()
 					while running do
 						sleep(1)
-						updateFlashedColour(colour.random())
+						colourBinding:update(colour.random())
 					end
 				end
 			)
@@ -42,7 +30,21 @@ local flashComponent = function(props, hooks)
 		"guiFrame",
 		{
 			size = guiCoord(1, 0, 1, 0),
-			backgroundColour = currentFlashedColour,
+			backgroundColour = colourBinding,
+			[".ref"] = textRef,
+			["event.mouseLeftDown"] = function()
+				updateText(tostring(textRef:value().backgroundColour))
+			end,
+			children = {
+				colorBox = createElement(
+					"guiTextBox",
+					{
+						size = guiCoord(1, 0, 0, 20),
+						text = text,
+						textAlign = "middle"
+					}
+				)
+			}
 		}
 	)
 end

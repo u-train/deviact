@@ -71,7 +71,52 @@ renderer.diffNode = function(node, incomingElement)
 	)(renderer, node, incomingElement)
 end
 
+renderer.diffChildren = function(node, parent, incomingChildren)
+	for newChildKey, newChildElement in next, incomingChildren do
+		if type(newChildElement) ~= "boolean" then
+			if node.children[newChildKey] then 
+				renderer.diffNode(node.children[newChildKey], newChildElement)
+			else
+				node.children[newChildKey] = renderer.mountElement(newChildElement, parent, newChildKey)
+			end
+		else
+			if node.children[newChildKey] ~= nil then
+				renderer.unmountNode(node.children[newChildKey])
+				node.children[newChildKey] = nil
+			end
+		end
+	end
+
+	for oldChildKey, oldChildNode in next, node.element.props.children do
+		if incomingChildren[oldChildKey] == nil then
+			renderer.unmountNode(oldChildNode)
+			node.children[oldChildKey] = nil
+		end
+	end 
+end
+
+renderer.unmountChildren = function(node)
+	for key, childNode in next, node.children do
+		renderer.unmountNode(childNode)
+		node.children[key] = nil
+	end
+end
+
+renderer.mountChildren = function(node, parent, incomingChildren)
+	for childKey, childElement in next, incomingChildren do
+		node.children[childKey] = renderer.mountElement(childElement, parent, childKey)
+	end
+end
+
 renderer.unmountNode = function(node)
+	if node == nil then
+		error("bad argument #1, node expected got nil.", 2)
+	end
+
+	if node.mounted == false then
+		error("Cannot unmount a unmounted node.", 2)
+	end
+ 
 	local elementType = node.element.type
 
 	;(

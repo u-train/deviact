@@ -1,9 +1,9 @@
---[[
-	useState
-	useEffect
-]]
+local bindings = require("./binding.lua")
+
 return function(renderer, node)
+	local hooks = node.hooks
 	local useCount = 0
+	local effectsQueued = {}
 
 	local captureUseCount = function()
 		useCount = useCount + 1
@@ -11,30 +11,27 @@ return function(renderer, node)
 	end
 
 	return {
-		hasRan = function()
-			return useCount > 0
-		end,
 		useState = function(startingState)
 			local capturedUseCount = captureUseCount()
 
-			if node.hooks[capturedUseCount] == nil then
-				node.hooks[capturedUseCount] = { startingState }
+			if hooks[capturedUseCount] == nil then
+				hooks[capturedUseCount] = { startingState }
 			end
 
-			local state = (node.hooks[capturedUseCount])[1]
+			local state = (hooks[capturedUseCount])[1]
 
 			return state, function(newState)
-				node.hooks[capturedUseCount][1] = newState
+				hooks[capturedUseCount][1] = newState
 				renderer.diffNode(node, node.element)
 			end
 		end,
 		useEffect = function(effect, dependencies)
 			local capturedUseCount = captureUseCount()
-			local effectContainer = node.hooks[capturedUseCount]
+			local effectContainer = hooks[capturedUseCount]
 
 			if effectContainer == nil then
-				local cleanUp = effect()
-				node.hooks[capturedUseCount] = { cleanUp = cleanUp, lastCapturedDependencies = dependencies }
+				hooks[capturedUseCount] = { effect = effect, cleanUp = nil, lastCapturedDependencies = dependencies }
+				effectsQueued[#effectsQueued + 1] = hooks[capturedUseCount] 
 				return
 			end
 
@@ -51,12 +48,25 @@ return function(renderer, node)
 				return
 			end
 			
-			if effectContainer.cleanUp then
-				effectContainer.cleanUp()
+			effectsQueued[#effectsQueued + 1] = effectContainer
+		end,
+		useBinding = function(startingValue)
+			local capturedUseCount = captureUseCount()
+
+			if hooks[capturedUseCount] == nil then
+				hooks[capturedUseCount] = { bindings.new(startingValue) }
 			end
 
-			effectContainer.cleanUp = effect()
-		end
+			return hooks[capturedUseCount][1]
+		end,
+		runEffects = function()
+			for _, effectContainer in next, effectsQueued do
+				if effectContainer.cleanUp then
+					effectContainer.cleanUp()
+				end
 
+				effectContainer.cleanUp = effectContainer.effect()
+			end
+		end
 	}
 end
