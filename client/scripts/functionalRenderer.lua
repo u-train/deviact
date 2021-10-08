@@ -1,3 +1,4 @@
+---@module "client.scripts.hooks"
 local newHooks = require "./hooks.lua"
 
 return {

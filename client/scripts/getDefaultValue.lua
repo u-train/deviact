@@ -1,5 +1,8 @@
 local classDefaultValueList = {}
 
+---@param className string
+---@param propertyName string
+---@return any propertyValue
 return function(className, propertyName)
 	local defaultValue
 	if classDefaultValueList[className] then

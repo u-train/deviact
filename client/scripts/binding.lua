@@ -1,10 +1,16 @@
+---@class binding
 local binding = { type = "binding" }
 binding.__index = binding
 
+---@param startingValue any
+---@return binding
 function binding.new(startingValue)
-	return setmetatable({ _value = startingValue, next = nil }, binding)
+	return setmetatable({
+		_value = startingValue, next = nil
+	}, binding)
 end
 
+---@param value any
 function binding:update(value)
 	self._value = value
 
@@ -16,10 +22,13 @@ function binding:update(value)
 	end
 end
 
+---@return any value
 function binding:value()
 	return self._value
 end
 
+---@param mapper fun(value:any):any
+---@return binding
 function binding:map(mapper)
 	local newBinder = binding.new()
 
@@ -30,6 +39,8 @@ function binding:map(mapper)
 	return newBinder
 end
 
+---@param callback fun(value:any):any
+---@return function disconnect
 function binding:connect(callback)
 	local newNode = { prev = nil, callback = callback, next = nil }
 

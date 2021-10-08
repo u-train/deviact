@@ -1,3 +1,5 @@
+---@param element string|function
+---@param props table<string, any>
 return function(element, props)
 	local elementType
 	if type(element) == "string" then
@@ -17,6 +19,6 @@ return function(element, props)
 	if props.children == nil then
 		props.children = {}
 	end
-
+	
 	return { type = elementType, element = element, props = props }
 end

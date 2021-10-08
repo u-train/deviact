@@ -1,3 +1,4 @@
+---@module "client.scripts.binding"
 local bindings = require "./binding.lua"
 
 return function(renderer, node)

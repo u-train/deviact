@@ -1,6 +1,9 @@
 local elementRenderers = {
+	---@module "client.scripts.tevObjectRenderer"
 	tevObject = require "./tevObjectRenderer.lua",
+	---@module "client.scripts.functionalRenderer"
 	functional = require "./functionalRenderer.lua",
+	---@module "client.scripts.fragmentRenderer"
 	fragment = require "./fragmentRenderer.lua",
 }
 
@@ -128,7 +131,7 @@ renderer.unmountNode = function(node)
 end
 
 renderer.mountElement = function(element, parent, key)
-	local node = createNode(element, parent, key or "deviact." .. element.type)
+	local node = createNode(element, parent, key and key ~= nil or "deviact." .. element.type)
 
 	renderer.mountNode(node)
 

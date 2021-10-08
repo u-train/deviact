@@ -1,15 +1,24 @@
+---@class eventManager
+---@field _eventList table
+---@field _tevObject any
+---@field _status "paused"|"resuming"|"running"
+
+
 local eventManager = {}
 eventManager.__index = eventManager
 
+---@param tevObject any
+---@return eventManager
 function eventManager.new(tevObject)
 	return setmetatable({
 		_tevObject = tevObject,
-		_status = "paused", -- paused, running, resuming
+		_status = "paused",
 		_eventList = {},
 		_queuedEvents = {},
 	}, eventManager)
 end
 
+---@param self eventManager
 function eventManager:setEvent(eventName, callback)
 	if callback == nil then
 		self:clearEvent(eventName)
